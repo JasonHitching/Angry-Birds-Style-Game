@@ -19,16 +19,14 @@ class ViewController: UIViewController, subviewDelegate{
         ballFrame.image = UIImage(named: "ball.png")
         ballFrame.frame = CGRect(x: W/40, y: H/2.7, width: 80, height: 80)
         self.view.addSubview(ballFrame)
-        
+        balls.append(ballFrame)
         
         dynamicItemBehavior = UIDynamicItemBehavior(items: balls)
-        dynamicItemBehavior.addItem(ballFrame)
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         self.dynamicItemBehavior.addLinearVelocity(CGPoint(x:500, y:150), for: ballFrame)
         
         //Create phone screen side collisions
-        collisionBehavior = UICollisionBehavior(items: [ballFrame])
-        //collisionBehavior.setTranslatesReferenceBoundsIntoBoundary(with: W, y: UIScreen.main.bounds.width))
+        collisionBehavior = UICollisionBehavior(items: balls)
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         dynamicAnimator.addBehavior(collisionBehavior)
         }
@@ -40,7 +38,7 @@ class ViewController: UIViewController, subviewDelegate{
     var dynamicAnimator: UIDynamicAnimator!
     var collisionBehavior: UICollisionBehavior!
     var dynamicItemBehavior: UIDynamicItemBehavior!
-    var balls: [UIImageView] = []
+    var balls = [UIDynamicItem]();
     
     func setTranslatesReferenceBoundsIntoBoundary(with insets: UIEdgeInsets){
         

@@ -26,6 +26,8 @@ class ViewController: UIViewController, subviewDelegate{
     var birdViews = [UIImageView]();
     var angleX:Int = 0
     var angleY:Int = 0
+    var birdTimer:Timer?
+    
     
     //Retrieve width & height of current phone screen
     let W = UIScreen.main.bounds.width
@@ -92,24 +94,21 @@ class ViewController: UIViewController, subviewDelegate{
     }
     
     
-    func addBird(){
+    func addBirds(){
         let birdFrame = UIImageView(image: nil)
         birdFrame.image = UIImage(named: "bird1.png")
         birdFrame.frame = CGRect(x: W/1.2, y: H/2.5, width: 80, height: 80)
         birdViews.append(birdFrame)
-        self.view.addSubview(birdFrame)
         
         let birdFrame2 = UIImageView(image: nil)
         birdFrame2.image = UIImage(named: "bird1.png")
         birdFrame2.frame = CGRect(x: W/1.2, y: H/1.4, width: 80, height: 80)
         birdViews.append(birdFrame2)
-        self.view.addSubview(birdFrame2)
         
         let birdFrame3 = UIImageView(image: nil)
         birdFrame3.image = UIImage(named: "bird1.png")
         birdFrame3.frame = CGRect(x: W/1.2, y: H/11, width: 80, height: 80)
         birdViews.append(birdFrame3)
-        self.view.addSubview(birdFrame3)
     }
     
     override func viewDidLoad() {
@@ -119,12 +118,14 @@ class ViewController: UIViewController, subviewDelegate{
         
         shooter.myDelegate = self
         
+        addBirds()
+
         setupShooter()
         
-        addBird()
-        
-        
-        
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) {_ in
+            self.view.addSubview(self.birdViews[Int.random(in: 0 ... 2)])
+        }
+         
     }
 }
 

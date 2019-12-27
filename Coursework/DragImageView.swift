@@ -28,6 +28,8 @@ class DragImageView: UIImageView {
         let dy = currentLocation!.y - startLocation!.y
         var newCenter = CGPoint(x: self.center.x+dx, y: self.center.y+dy)
             
+        // Pass current shooter coordinates
+        self.myDelegate?.updateCoord(X: Int(dx), Y: Int(dy))
     
         //Constrain movement to the phone screen bounds
         let halfx = self.bounds.midX // half the width of the image
@@ -39,12 +41,11 @@ class DragImageView: UIImageView {
         newCenter.y = min(self.superview!.bounds.height / 2 + 90 - halfy, newCenter.y)
 
         self.center = newCenter
-        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.center = CGPoint(x: UIScreen.main.bounds.width/10, y: UIScreen.main.bounds.height/2)
-        self.myDelegate?.changeSomething()
+        self.myDelegate?.fireBall()
     }
 
 }

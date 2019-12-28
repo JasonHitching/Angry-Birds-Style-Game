@@ -16,6 +16,7 @@ protocol subviewDelegate {
 class ViewController: UIViewController, subviewDelegate{
     
     @IBOutlet weak var shooter: DragImageView!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     //Global variables
     var dynamicAnimator: UIDynamicAnimator!
@@ -27,6 +28,7 @@ class ViewController: UIViewController, subviewDelegate{
     var angleX:Int = 0
     var angleY:Int = 0
     var birdTimer:Timer?
+    var score:Int = 0
     
     
     //Retrieve width & height of current phone screen
@@ -76,7 +78,15 @@ class ViewController: UIViewController, subviewDelegate{
             for ballView in self.balls {
                 for birds in self.birdViews {
                     if ballView.frame.intersects(birds.frame) {
+                        let before = self.view.subviews.count
                         birds.removeFromSuperview()
+                        let after = self.view.subviews.count
+                        
+                        //If a bird was removed from superview
+                        if (before != after){
+                            self.score += 1
+                            self.scoreLabel.text = "Score: " + String(self.score)
+                        }
                     }
                 }
             }
@@ -101,12 +111,12 @@ class ViewController: UIViewController, subviewDelegate{
         birdViews.append(birdFrame)
         
         let birdFrame2 = UIImageView(image: nil)
-        birdFrame2.image = UIImage(named: "bird1.png")
+        birdFrame2.image = UIImage(named: "bird6.png")
         birdFrame2.frame = CGRect(x: W/1.2, y: H/1.4, width: 80, height: 80)
         birdViews.append(birdFrame2)
         
         let birdFrame3 = UIImageView(image: nil)
-        birdFrame3.image = UIImage(named: "bird1.png")
+        birdFrame3.image = UIImage(named: "bird3.png")
         birdFrame3.frame = CGRect(x: W/1.2, y: H/11, width: 80, height: 80)
         birdViews.append(birdFrame3)
     }
@@ -122,7 +132,7 @@ class ViewController: UIViewController, subviewDelegate{
 
         setupShooter()
         
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) {_ in
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {_ in
             self.view.addSubview(self.birdViews[Int.random(in: 0 ... 2)])
         }
          

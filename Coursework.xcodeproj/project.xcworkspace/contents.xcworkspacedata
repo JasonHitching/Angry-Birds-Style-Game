@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Coursework.xcodeproj">
+      location = "group:../../../../Google Drive/Mobile Computing/enemy_3.pdf">
+   </FileRef>
+   <FileRef
+      location = "group:../../../../Google Drive/Mobile Computing/Unit 3 - Views &amp; Images/images/road5.png">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

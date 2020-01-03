@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5PQ-9F-zhd">
     <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -14,13 +14,35 @@
                     <view key="view" contentMode="scaleToFill" id="Dcw-Yk-xhK">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOZ-Tv-JUd">
+                                <rect key="frame" x="218" y="204" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="replay_button.png"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="UoO-1d-OSb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzl-4q-MyR">
+                                <rect key="frame" x="370" y="204" width="71" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="home_button.png"/>
+                                <connections>
+                                    <segue destination="5PQ-9F-zhd" kind="presentation" id="4zn-Zb-S5A"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="gdM-HT-lhe"/>
                     </view>
+                    <connections>
+                        <outlet property="homeButton" destination="qzl-4q-MyR" id="gw2-3p-ofa"/>
+                        <outlet property="replayButton" destination="MOZ-Tv-JUd" id="oYn-br-K9c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDg-IT-djY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.18140929535232" y="-575.20000000000005"/>
+            <point key="canvasLocation" x="55" y="-577"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -47,15 +69,41 @@
                     </view>
                     <connections>
                         <outlet property="scoreLabel" destination="85p-eN-0sF" id="ccu-Iq-6SD"/>
-                        <outlet property="shooter" destination="keh-m4-a64" id="uF1-1F-P7u"/>
+                        <outlet property="shooter" destination="keh-m4-a64" id="4va-z8-ox9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.0809595202399" y="136.80000000000001"/>
+            <point key="canvasLocation" x="311" y="804"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5fk-cy-1Ho">
+            <objects>
+                <viewController id="5PQ-9F-zhd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iYU-bu-Y8X">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ime-PZ-27v" customClass="ReplayButton" customModule="Coursework" customModuleProvider="target">
+                                <rect key="frame" x="272" y="172" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start Game"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="kxM-wJ-hR0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EKg-qW-ZtO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kh6-cz-Rql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758.77061469265368" y="-95.200000000000003"/>
         </scene>
     </scenes>
     <resources>
+        <image name="home_button.png" width="200" height="200"/>
         <image name="imageView:keh-m4-a64:image" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
@@ -4576,5 +4624,9 @@ BA8QAAQPEgAEDxQABA8WAAQPGAAEDx0ABA8lAAQgkQAEIJMABCCYAAQgpgAEIKoABCCxAAQgtgAEIMMA
 BCDGAAQg0wAEINgABCDgAAQg4wAEIOgABCDwAAAAAAAABAEAAAAAAAAAVwAAAAAAAAAAAAAAAAAEIPM
 </mutableData>
         </image>
+        <image name="replay_button.png" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UoO-1d-OSb"/>
+    </inferredMetricsTieBreakers>
 </document>

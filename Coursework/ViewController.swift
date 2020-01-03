@@ -15,8 +15,10 @@ protocol subviewDelegate {
 
 class ViewController: UIViewController, subviewDelegate{
     
-    @IBOutlet weak var shooter: DragImageView!
     @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet var shooter: DragImageView!
+    
     
     //Global variables
     var dynamicAnimator: UIDynamicAnimator!
@@ -127,7 +129,7 @@ class ViewController: UIViewController, subviewDelegate{
         
         if gameInt == 0 {
             gameTimer.invalidate()
-            
+            gameInt = 10;
             Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(ViewController.end), userInfo: nil, repeats: false)
         }
     }
@@ -148,15 +150,15 @@ class ViewController: UIViewController, subviewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        startGameTimer()
         score = 0
-        
-        dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+
         shooter.myDelegate = self
+        dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+
         addBirds()
         setupShooter()
-        startGameTimer()
-        
+
         // Background img
         let bg2View = UIImageView(image: nil)
         bg2View.image = UIImage(named: "bg.jpg")

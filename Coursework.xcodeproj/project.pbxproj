@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261E6C5D23BF291D00B79447 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 261E6C5C23BF291D00B79447 /* bg2.png */; };
+		261E6C5F23BF5A3100B79447 /* ReplayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E6C5E23BF5A3100B79447 /* ReplayButton.swift */; };
 		26E335582397D549008CDCD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E335572397D549008CDCD6 /* AppDelegate.swift */; };
 		26E3355A2397D549008CDCD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E335592397D549008CDCD6 /* SceneDelegate.swift */; };
-		26E3355C2397D549008CDCD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E3355B2397D549008CDCD6 /* ViewController.swift */; };
+		26E3355C2397D549008CDCD6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E3355B2397D549008CDCD6 /* MainViewController.swift */; };
 		26E3355F2397D549008CDCD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E3355D2397D549008CDCD6 /* Main.storyboard */; };
 		26E335612397D54A008CDCD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E335602397D54A008CDCD6 /* Assets.xcassets */; };
 		26E335642397D54A008CDCD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E335622397D54A008CDCD6 /* LaunchScreen.storyboard */; };
@@ -44,10 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		261E6C5C23BF291D00B79447 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg2.png; path = "../../../../Google Drive/Mobile Computing/Assets/2D SCROLLING BACKGROUND/bg2.png"; sourceTree = "<group>"; };
+		261E6C5E23BF5A3100B79447 /* ReplayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplayButton.swift; sourceTree = "<group>"; };
 		26E335542397D549008CDCD6 /* Coursework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coursework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E335572397D549008CDCD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26E335592397D549008CDCD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		26E3355B2397D549008CDCD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		26E3355B2397D549008CDCD6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		26E3355E2397D549008CDCD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26E335602397D54A008CDCD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26E335632397D54A008CDCD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -119,19 +123,21 @@
 			children = (
 				26E335572397D549008CDCD6 /* AppDelegate.swift */,
 				26E335592397D549008CDCD6 /* SceneDelegate.swift */,
-				26E3355B2397D549008CDCD6 /* ViewController.swift */,
+				26E3355B2397D549008CDCD6 /* MainViewController.swift */,
 				26F9BE7223BE81AF0063DEE0 /* EndViewController.swift */,
 				26E335872397D79A008CDCD6 /* DragImageView.swift */,
+				261E6C5E23BF5A3100B79447 /* ReplayButton.swift */,
 				26E3355D2397D549008CDCD6 /* Main.storyboard */,
+				26E335622397D54A008CDCD6 /* LaunchScreen.storyboard */,
 				26F9BE7E23BE9FB00063DEE0 /* redbird_flying.png */,
 				26F9BE8023BEA6540063DEE0 /* enemy_1.png */,
 				26F9BE8223BEA6C10063DEE0 /* enemy_2.png */,
 				26F9BE8423BEA7890063DEE0 /* enemy_3.png */,
 				26F9BE7A23BE96820063DEE0 /* gameOver.png */,
+				261E6C5C23BF291D00B79447 /* bg2.png */,
 				26F9BE7823BE93A10063DEE0 /* bg.jpg */,
 				26E335892397D9CF008CDCD6 /* aim.png */,
 				26E335602397D54A008CDCD6 /* Assets.xcassets */,
-				26E335622397D54A008CDCD6 /* LaunchScreen.storyboard */,
 				26E335652397D54A008CDCD6 /* Info.plist */,
 			);
 			path = Coursework;
@@ -265,6 +271,7 @@
 				26F9BE7923BE93A20063DEE0 /* bg.jpg in Resources */,
 				26F9BE7B23BE96820063DEE0 /* gameOver.png in Resources */,
 				26F9BE8323BEA6C10063DEE0 /* enemy_2.png in Resources */,
+				261E6C5D23BF291D00B79447 /* bg2.png in Resources */,
 				26E3358A2397D9CF008CDCD6 /* aim.png in Resources */,
 				26F9BE8123BEA6540063DEE0 /* enemy_1.png in Resources */,
 				26E335612397D54A008CDCD6 /* Assets.xcassets in Resources */,
@@ -293,8 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26E3355C2397D549008CDCD6 /* ViewController.swift in Sources */,
+				26E3355C2397D549008CDCD6 /* MainViewController.swift in Sources */,
 				26F9BE7323BE81AF0063DEE0 /* EndViewController.swift in Sources */,
+				261E6C5F23BF5A3100B79447 /* ReplayButton.swift in Sources */,
 				26E335582397D549008CDCD6 /* AppDelegate.swift in Sources */,
 				26E335882397D79A008CDCD6 /* DragImageView.swift in Sources */,
 				26E3355A2397D549008CDCD6 /* SceneDelegate.swift in Sources */,

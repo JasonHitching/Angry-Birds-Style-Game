@@ -32,7 +32,7 @@ class ViewController: UIViewController, subviewDelegate{
     var birdTimer:Timer?
     
     var gameTimer = Timer()
-    var gameInt = 10
+    var gameInt = 2
     
     var score = 0
     
@@ -88,7 +88,7 @@ class ViewController: UIViewController, subviewDelegate{
                         let after = self.view.subviews.count
                         
                         //If a bird was removed from superview
-                        if (before != after){
+                        if (before != after) {
                             self.score += 1
                             self.scoreLabel.text = "Score: " + String(self.score)
                         }
@@ -108,7 +108,7 @@ class ViewController: UIViewController, subviewDelegate{
         self.view.addSubview(shooter)
     }
     
-    func addBirds(){
+    func addBirds() {
         let birdFrame = UIImageView(image: UIImage(named: "enemy_1.png"))
         birdFrame.frame = CGRect(x: W/1.2, y: H/2.5, width: 80, height: 80)
         birdViews.append(birdFrame)
@@ -144,16 +144,27 @@ class ViewController: UIViewController, subviewDelegate{
         gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.game), userInfo: nil, repeats: true)
     }
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+        
+        score = 0
+        
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
         shooter.myDelegate = self
         addBirds()
         setupShooter()
         startGameTimer()
-                
         
+        // Background img
+        let bg2View = UIImageView(image: nil)
+        bg2View.image = UIImage(named: "bg.jpg")
+        bg2View.frame = UIScreen.main.bounds
+        self.view.addSubview(bg2View)
+        self.view.sendSubviewToBack(bg2View)
+                
+        //Random bird appearance
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {_ in
             self.view.addSubview(self.birdViews[Int.random(in: 0 ... 2)])
         }  

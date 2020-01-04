@@ -11,6 +11,7 @@ import UIKit
 class DragImageView: UIImageView {
     
     var myDelegate: subviewDelegate?
+    var anotherDelegate: subview2Delegate?
     
     var startLocation: CGPoint?
     let W = UIScreen.main.bounds.width
@@ -30,6 +31,7 @@ class DragImageView: UIImageView {
             
         // Pass current shooter coordinates
         self.myDelegate?.updateCoord(X: Int(dx), Y: Int(dy))
+        self.anotherDelegate?.updateCoord(X: Int(dx), Y: Int(dy))
     
         //Constrain movement to the phone screen bounds
         let halfx = self.bounds.midX // half the width of the image
@@ -45,6 +47,7 @@ class DragImageView: UIImageView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.center = CGPoint(x: UIScreen.main.bounds.width/10, y: UIScreen.main.bounds.height/2)
+        self.anotherDelegate?.fireBall()
         self.myDelegate?.fireBall()
     }
 

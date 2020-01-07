@@ -113,15 +113,15 @@ class L2ViewController: UIViewController, subview2Delegate{
     }
     
     func addBirds() {
-        let birdFrame = UIImageView(image: UIImage(named: "enemy_1.png"))
+        let birdFrame = UIImageView(image: UIImage(named: "enemy.png"))
         birdFrame.frame = CGRect(x: W/1.2, y: H/2.5, width: 80, height: 80)
         birdViews.append(birdFrame)
         
-        let birdFrame2 = UIImageView(image: UIImage(named: "enemy_2.png"))
+        let birdFrame2 = UIImageView(image: UIImage(named: "enemy.png"))
         birdFrame2.frame = CGRect(x: W/1.2, y: H/1.4, width: 80, height: 80)
         birdViews.append(birdFrame2)
         
-        let birdFrame3 = UIImageView(image: UIImage(named: "enemy_3.png"))
+        let birdFrame3 = UIImageView(image: UIImage(named: "enemy.png"))
         birdFrame3.frame = CGRect(x: W/1.2, y: H/11, width: 80, height: 80)
         birdViews.append(birdFrame3)
     }

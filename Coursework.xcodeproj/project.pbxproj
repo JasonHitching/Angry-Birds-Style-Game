@@ -22,6 +22,14 @@
 		263378B323C09F8B00D15255 /* rock8.png in Resources */ = {isa = PBXBuildFile; fileRef = 263378B223C09F8B00D15255 /* rock8.png */; };
 		263378B523C0A44100D15255 /* rock9.png in Resources */ = {isa = PBXBuildFile; fileRef = 263378B423C0A44100D15255 /* rock9.png */; };
 		263378BB23C0D03400D15255 /* EndViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263378BA23C0D03400D15255 /* EndViewController2.swift */; };
+		263873A223C2043A00542C6F /* next_level.png in Resources */ = {isa = PBXBuildFile; fileRef = 263873A123C2043A00542C6F /* next_level.png */; };
+		264EAD1623C495A500A25793 /* rock1.png in Resources */ = {isa = PBXBuildFile; fileRef = 264EAD1523C495A500A25793 /* rock1.png */; };
+		264EAD1823C4ADA800A25793 /* Jelly.png in Resources */ = {isa = PBXBuildFile; fileRef = 264EAD1723C4ADA800A25793 /* Jelly.png */; };
+		264EAD1A23C4ADB000A25793 /* Jelly2.png in Resources */ = {isa = PBXBuildFile; fileRef = 264EAD1923C4ADB000A25793 /* Jelly2.png */; };
+		264EAD1C23C4ADBA00A25793 /* Jelly3.png in Resources */ = {isa = PBXBuildFile; fileRef = 264EAD1B23C4ADBA00A25793 /* Jelly3.png */; };
+		264EAD1E23C4B69E00A25793 /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 264EAD1D23C4B69D00A25793 /* enemy.png */; };
+		265EE77123C3AF4B00BE2895 /* EndViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EE77023C3AF4B00BE2895 /* EndViewController3.swift */; };
+		265EE77323C3B5A000BE2895 /* L3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EE77223C3B5A000BE2895 /* L3ViewController.swift */; };
 		26E335582397D549008CDCD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E335572397D549008CDCD6 /* AppDelegate.swift */; };
 		26E3355A2397D549008CDCD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E335592397D549008CDCD6 /* SceneDelegate.swift */; };
 		26E3355C2397D549008CDCD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E3355B2397D549008CDCD6 /* ViewController.swift */; };
@@ -36,9 +44,6 @@
 		26F9BE7923BE93A20063DEE0 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26F9BE7823BE93A10063DEE0 /* bg.jpg */; };
 		26F9BE7B23BE96820063DEE0 /* gameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F9BE7A23BE96820063DEE0 /* gameOver.png */; };
 		26F9BE7F23BE9FB00063DEE0 /* redbird_flying.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F9BE7E23BE9FB00063DEE0 /* redbird_flying.png */; };
-		26F9BE8123BEA6540063DEE0 /* enemy_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F9BE8023BEA6540063DEE0 /* enemy_1.png */; };
-		26F9BE8323BEA6C10063DEE0 /* enemy_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F9BE8223BEA6C10063DEE0 /* enemy_2.png */; };
-		26F9BE8523BEA7890063DEE0 /* enemy_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F9BE8423BEA7890063DEE0 /* enemy_3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +79,14 @@
 		263378B223C09F8B00D15255 /* rock8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock8.png; sourceTree = "<group>"; };
 		263378B423C0A44100D15255 /* rock9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock9.png; sourceTree = "<group>"; };
 		263378BA23C0D03400D15255 /* EndViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController2.swift; sourceTree = "<group>"; };
+		263873A123C2043A00542C6F /* next_level.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_level.png; sourceTree = "<group>"; };
+		264EAD1523C495A500A25793 /* rock1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock1.png; sourceTree = "<group>"; };
+		264EAD1723C4ADA800A25793 /* Jelly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jelly.png; sourceTree = "<group>"; };
+		264EAD1923C4ADB000A25793 /* Jelly2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jelly2.png; sourceTree = "<group>"; };
+		264EAD1B23C4ADBA00A25793 /* Jelly3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jelly3.png; sourceTree = "<group>"; };
+		264EAD1D23C4B69D00A25793 /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
+		265EE77023C3AF4B00BE2895 /* EndViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController3.swift; sourceTree = "<group>"; };
+		265EE77223C3B5A000BE2895 /* L3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L3ViewController.swift; sourceTree = "<group>"; };
 		26E335542397D549008CDCD6 /* Coursework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coursework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E335572397D549008CDCD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26E335592397D549008CDCD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,9 +107,6 @@
 		26F9BE7823BE93A10063DEE0 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		26F9BE7A23BE96820063DEE0 /* gameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameOver.png; sourceTree = "<group>"; };
 		26F9BE7E23BE9FB00063DEE0 /* redbird_flying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redbird_flying.png; sourceTree = "<group>"; };
-		26F9BE8023BEA6540063DEE0 /* enemy_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy_1.png; sourceTree = "<group>"; };
-		26F9BE8223BEA6C10063DEE0 /* enemy_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy_2.png; sourceTree = "<group>"; };
-		26F9BE8423BEA7890063DEE0 /* enemy_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy_3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,19 +157,24 @@
 		26E335562397D549008CDCD6 /* Coursework */ = {
 			isa = PBXGroup;
 			children = (
-				26E335572397D549008CDCD6 /* AppDelegate.swift */,
-				26E335592397D549008CDCD6 /* SceneDelegate.swift */,
+				264EAD1D23C4B69D00A25793 /* enemy.png */,
+				264EAD1B23C4ADBA00A25793 /* Jelly3.png */,
+				264EAD1923C4ADB000A25793 /* Jelly2.png */,
+				264EAD1723C4ADA800A25793 /* Jelly.png */,
 				2616C71B23BFD90F008DE3D6 /* StartViewController.swift */,
 				26E3355B2397D549008CDCD6 /* ViewController.swift */,
 				2616C72523BFE526008DE3D6 /* L2ViewController.swift */,
+				265EE77223C3B5A000BE2895 /* L3ViewController.swift */,
 				26F9BE7223BE81AF0063DEE0 /* EndViewController.swift */,
 				263378BA23C0D03400D15255 /* EndViewController2.swift */,
+				265EE77023C3AF4B00BE2895 /* EndViewController3.swift */,
 				26E3355D2397D549008CDCD6 /* Main.storyboard */,
 				26E335872397D79A008CDCD6 /* DragImageView.swift */,
 				261E6C5E23BF5A3100B79447 /* ReplayButton.swift */,
 				26E335652397D54A008CDCD6 /* Info.plist */,
 				26E335622397D54A008CDCD6 /* LaunchScreen.storyboard */,
 				26E335602397D54A008CDCD6 /* Assets.xcassets */,
+				263873A123C2043A00542C6F /* next_level.png */,
 				263378B223C09F8B00D15255 /* rock8.png */,
 				263378B423C0A44100D15255 /* rock9.png */,
 				263378B023C09AB000D15255 /* ball.png */,
@@ -171,13 +186,13 @@
 				2616C72323BFE252008DE3D6 /* level_1.png */,
 				2616C72123BFE1EE008DE3D6 /* level_3.png */,
 				261E6C7023BFB18800B79447 /* replay_button.png */,
-				26F9BE8023BEA6540063DEE0 /* enemy_1.png */,
-				26F9BE8223BEA6C10063DEE0 /* enemy_2.png */,
-				26F9BE8423BEA7890063DEE0 /* enemy_3.png */,
+				264EAD1523C495A500A25793 /* rock1.png */,
 				26F9BE7A23BE96820063DEE0 /* gameOver.png */,
 				26E335892397D9CF008CDCD6 /* aim.png */,
 				261E6C5C23BF291D00B79447 /* bg2.png */,
 				26F9BE7823BE93A10063DEE0 /* bg.jpg */,
+				26E335572397D549008CDCD6 /* AppDelegate.swift */,
+				26E335592397D549008CDCD6 /* SceneDelegate.swift */,
 			);
 			path = Coursework;
 			sourceTree = "<group>";
@@ -307,21 +322,24 @@
 				26E335642397D54A008CDCD6 /* LaunchScreen.storyboard in Resources */,
 				26F9BE7F23BE9FB00063DEE0 /* redbird_flying.png in Resources */,
 				2616C72823BFECB8008DE3D6 /* square_barrier.png in Resources */,
-				26F9BE8523BEA7890063DEE0 /* enemy_3.png in Resources */,
+				264EAD1823C4ADA800A25793 /* Jelly.png in Resources */,
+				264EAD1E23C4B69E00A25793 /* enemy.png in Resources */,
 				26F9BE7923BE93A20063DEE0 /* bg.jpg in Resources */,
+				263873A223C2043A00542C6F /* next_level.png in Resources */,
 				26F9BE7B23BE96820063DEE0 /* gameOver.png in Resources */,
+				264EAD1623C495A500A25793 /* rock1.png in Resources */,
 				263378B123C09AB000D15255 /* ball.png in Resources */,
-				26F9BE8323BEA6C10063DEE0 /* enemy_2.png in Resources */,
 				2616C72023BFE1BA008DE3D6 /* level_2.png in Resources */,
 				261E6C7523BFB8B300B79447 /* start_game.png in Resources */,
 				261E6C5D23BF291D00B79447 /* bg2.png in Resources */,
 				261E6C7123BFB18900B79447 /* replay_button.png in Resources */,
 				2616C72223BFE1EE008DE3D6 /* level_3.png in Resources */,
+				264EAD1C23C4ADBA00A25793 /* Jelly3.png in Resources */,
 				26E3358A2397D9CF008CDCD6 /* aim.png in Resources */,
 				2616C72423BFE252008DE3D6 /* level_1.png in Resources */,
 				263378B523C0A44100D15255 /* rock9.png in Resources */,
 				263378B323C09F8B00D15255 /* rock8.png in Resources */,
-				26F9BE8123BEA6540063DEE0 /* enemy_1.png in Resources */,
+				264EAD1A23C4ADB000A25793 /* Jelly2.png in Resources */,
 				261E6C7323BFB36900B79447 /* home_button.png in Resources */,
 				26E335612397D54A008CDCD6 /* Assets.xcassets in Resources */,
 				26E3355F2397D549008CDCD6 /* Main.storyboard in Resources */,
@@ -351,8 +369,10 @@
 			files = (
 				26E3355C2397D549008CDCD6 /* ViewController.swift in Sources */,
 				2616C71C23BFD90F008DE3D6 /* StartViewController.swift in Sources */,
+				265EE77123C3AF4B00BE2895 /* EndViewController3.swift in Sources */,
 				26F9BE7323BE81AF0063DEE0 /* EndViewController.swift in Sources */,
 				261E6C5F23BF5A3100B79447 /* ReplayButton.swift in Sources */,
+				265EE77323C3B5A000BE2895 /* L3ViewController.swift in Sources */,
 				263378BB23C0D03400D15255 /* EndViewController2.swift in Sources */,
 				26E335582397D549008CDCD6 /* AppDelegate.swift in Sources */,
 				26E335882397D79A008CDCD6 /* DragImageView.swift in Sources */,
@@ -531,6 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Coursework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -548,6 +569,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Coursework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

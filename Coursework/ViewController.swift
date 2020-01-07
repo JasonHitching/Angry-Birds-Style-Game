@@ -8,6 +8,7 @@
 
 import UIKit
 
+/* Delegation protocol */
 protocol subviewDelegate {
     func fireBall()
     func updateCoord(X: Int, Y: Int)
@@ -19,16 +20,21 @@ class ViewController: UIViewController, subviewDelegate{
     @IBOutlet var shooter: DragImageView!
     
     
-    //Global variables
+    /* Dynamic/Collision Variables */
     var dynamicAnimator: UIDynamicAnimator!
     var collisionBehavior: UICollisionBehavior!
     var dynamicItemBehavior: UIDynamicItemBehavior!
+    
+    /* Array variables */
     var balls = [UIImageView]();
     var birdViews = [UIImageView]();
-    var angleX:Int = 0
-    var angleY:Int = 0
+    
+    /* Timer variables */
     var birdTimer:Timer?
     var gameTimer = Timer()
+    
+    var angleX:Int = 0
+    var angleY:Int = 0
     var gameInt = 5
     var score = 0
     
@@ -36,6 +42,7 @@ class ViewController: UIViewController, subviewDelegate{
     let W = UIScreen.main.bounds.width
     let H = UIScreen.main.bounds.height
     
+    /* Function to fire the ball */
     func fireBall() {
         
         /* Create a new ball */
@@ -58,6 +65,7 @@ class ViewController: UIViewController, subviewDelegate{
         setupCollisions()
     }
     
+    /* Update the shooter coordinates */
     func updateCoord(X: Int, Y: Int) {
         angleX = X*5
         angleY = Y*5
@@ -79,6 +87,7 @@ class ViewController: UIViewController, subviewDelegate{
         
         dynamicAnimator.addBehavior(collisionBehavior)
         
+        /* Ball & bird collision implementation */
         collisionBehavior.action = {
             for ballView in self.balls {
                 for birds in self.birdViews {
@@ -90,15 +99,14 @@ class ViewController: UIViewController, subviewDelegate{
                         //If a bird was removed from superview
                         if (before != after) {
                             self.score += 1
-                            self.scoreLabel.text = "Score: " + String(self.score)
-                        }
+                            self.scoreLabel.text = "Score: " + String(self.score) }
                     }
                 }
             }
         }
     }
     
-    // Initialise the crosshair image & starting position
+    /* Initialise the crosshair image & starting position */
     func setupShooter() {
         shooter.image = UIImage(named: "aim.png")
         shooter.frame = CGRect(x: W/27, y: H/2.5, width: 80, height: 80)
@@ -109,15 +117,15 @@ class ViewController: UIViewController, subviewDelegate{
     }
     
     func addBirds() {
-        let birdFrame = UIImageView(image: UIImage(named: "enemy_1.png"))
+        let birdFrame = UIImageView(image: UIImage(named: "enemy.png"))
         birdFrame.frame = CGRect(x: W/1.2, y: H/2.5, width: 80, height: 80)
         birdViews.append(birdFrame)
         
-        let birdFrame2 = UIImageView(image: UIImage(named: "enemy_2.png"))
+        let birdFrame2 = UIImageView(image: UIImage(named: "enemy.png"))
         birdFrame2.frame = CGRect(x: W/1.2, y: H/1.4, width: 80, height: 80)
         birdViews.append(birdFrame2)
         
-        let birdFrame3 = UIImageView(image: UIImage(named: "enemy_3.png"))
+        let birdFrame3 = UIImageView(image: UIImage(named: "enemy.png"))
         birdFrame3.frame = CGRect(x: W/1.2, y: H/11, width: 80, height: 80)
         birdViews.append(birdFrame3)
     }

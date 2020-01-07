@@ -10,10 +10,6 @@ import UIKit
 
 class StartViewController: UIViewController {
 
-    @IBOutlet var homeButton: UIButton!
-    @IBOutlet var replayButton: UIButton!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

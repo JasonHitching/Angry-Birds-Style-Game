@@ -22,14 +22,16 @@ class L2ViewController: UIViewController, subview2Delegate{
     var dynamicAnimator: UIDynamicAnimator!
     var collisionBehavior: UICollisionBehavior!
     var dynamicItemBehavior: UIDynamicItemBehavior!
+    
     var balls = [UIImageView]();
     var birdViews = [UIImageView]();
+    var visibleBirds = [UIImageView]();
     
     var angleX:Int = 0
     var angleY:Int = 0
     var birdTimer:Timer?
     var gameTimer = Timer()
-    var gameInt = 10
+    var gameInt = 2
     var score = 0
     
     //Retrieve width & height of current phone screen
@@ -85,8 +87,13 @@ class L2ViewController: UIViewController, subview2Delegate{
         /* BIRD COLLISIONS */
         collisionBehavior.action = {
             for ballView in self.balls {
-                for birds in self.birdViews {
+                for birds in self.visibleBirds {
                     if ballView.frame.intersects(birds.frame) {
+                        
+                        // Remove intersected bird from visibleBirds array
+                        let index = self.visibleBirds.firstIndex(of: birds)
+                        self.visibleBirds.remove(at: index!)
+                        
                         let before = self.view.subviews.count
                         birds.removeFromSuperview()
                         let after = self.view.subviews.count
@@ -140,6 +147,7 @@ class L2ViewController: UIViewController, subview2Delegate{
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame2")
                 as! EndViewController2
+        vc.scoreData = String(self.score)
         self.present(vc, animated: true, completion: nil)
         
     }
@@ -178,8 +186,13 @@ class L2ViewController: UIViewController, subview2Delegate{
         
                 
         //Random bird appearance
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {_ in
-            self.view.addSubview(self.birdViews[Int.random(in: 0 ... 2)])
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
+            let index = Int.random(in: 0 ... 2)
+            
+            if !self.visibleBirds.contains(self.birdViews[index]) {
+                self.visibleBirds.append(self.birdViews[index])
+                self.view.addSubview(self.birdViews[index])
+            }
         }
     }
 }

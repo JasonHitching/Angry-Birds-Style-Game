@@ -15,22 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOZ-Tv-JUd">
-                                <rect key="frame" x="218" y="204" width="66" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="replay_button.png"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="yM5-xM-RTx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzl-4q-MyR">
-                                <rect key="frame" x="370" y="204" width="71" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="home_button.png"/>
-                                <connections>
-                                    <segue destination="5PQ-9F-zhd" kind="presentation" id="xe6-Zo-Nae"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiR-6x-8dl">
                                 <rect key="frame" x="20" y="20" width="109" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -44,13 +28,67 @@
                                 </attributedString>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyG-wW-SFA">
+                                <rect key="frame" x="253" y="195" width="161" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Next Level">
+                                            <attributes>
+                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" size="24" name="Krungthep"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="kxp-05-7HU" kind="presentation" id="gPC-hS-ih3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2mW-s5-ZjV">
+                                <rect key="frame" x="253" y="271" width="161" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Home">
+                                            <attributes>
+                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" size="24" name="Krungthep"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="5PQ-9F-zhd" kind="presentation" id="zEe-8a-gJY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NRG-li-v8g">
+                                <rect key="frame" x="253" y="233" width="161" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Replay">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Krungthep"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="dDI-m7-KnM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="gdM-HT-lhe"/>
                     </view>
                     <connections>
-                        <outlet property="homeButton" destination="qzl-4q-MyR" id="baU-bz-42q"/>
-                        <outlet property="replayButton" destination="MOZ-Tv-JUd" id="YWR-EN-RkT"/>
+                        <outlet property="home" destination="2mW-s5-ZjV" id="wTS-vO-Agr"/>
+                        <outlet property="nextLevel" destination="iyG-wW-SFA" id="vnK-gG-AMM"/>
+                        <outlet property="replay" destination="NRG-li-v8g" id="FhT-8M-3qF"/>
                         <outlet property="scoreLabel" destination="WiR-6x-8dl" id="D6h-ru-Q5X"/>
                     </connections>
                 </viewController>
@@ -66,14 +104,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7T5-0c-mNP">
-                                <rect key="frame" x="92" y="186" width="118" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="replay_button.png"/>
-                                <connections>
-                                    <segue destination="kxp-05-7HU" kind="presentation" id="EG0-aT-Kdg"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asA-Mb-8Lg">
                                 <rect key="frame" x="53" y="20" width="125" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -88,31 +118,73 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzJ-Dm-D2c">
-                                <rect key="frame" x="266" y="186" width="135" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6kX-bc-mgp">
+                                <rect key="frame" x="253" y="172" width="161" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="home_button.png"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Next Level">
+                                            <attributes>
+                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" size="24" name="Krungthep"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
-                                    <segue destination="5PQ-9F-zhd" kind="presentation" id="XKZ-Eg-faR"/>
+                                    <segue destination="jU1-SX-5Lb" kind="presentation" id="DB7-8s-NCx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQD-3e-aWn">
-                                <rect key="frame" x="432" y="197" width="136" height="102"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bf1-sd-j4K">
+                                <rect key="frame" x="253" y="248" width="161" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="next_level.png"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Home">
+                                            <attributes>
+                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" size="24" name="Krungthep"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="5PQ-9F-zhd" kind="presentation" id="dp1-HP-z2W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lpj-Te-FbR">
+                                <rect key="frame" x="253" y="210" width="161" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Replay">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Krungthep"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="kxp-05-7HU" kind="presentation" id="nW5-bt-40J"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="sxv-pb-P3n"/>
                     </view>
                     <connections>
-                        <outlet property="homeButton2" destination="FzJ-Dm-D2c" id="kjG-Gy-0oI"/>
-                        <outlet property="replayButton2" destination="7T5-0c-mNP" id="kGG-Rg-7zl"/>
+                        <outlet property="home" destination="Bf1-sd-j4K" id="dyI-QG-gVk"/>
+                        <outlet property="nextLevel" destination="6kX-bc-mgp" id="LDs-Vd-9lZ"/>
+                        <outlet property="replay" destination="Lpj-Te-FbR" id="4hG-Gl-MHO"/>
+                        <outlet property="scoreLabel" destination="asA-Mb-8Lg" id="Rly-jl-zaK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVd-oL-ypz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-412" y="-519"/>
+            <point key="canvasLocation" x="-412.44377811094455" y="-519.20000000000005"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xvF-Sw-4Ke">
@@ -122,11 +194,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aim.png" translatesAutoresizingMaskIntoConstraints="NO" id="oP2-yN-FfB" customClass="DragImageView" customModule="Coursework" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aim" translatesAutoresizingMaskIntoConstraints="NO" id="oP2-yN-FfB" customClass="DragImageView" customModule="Coursework" customModuleProvider="target">
                                 <rect key="frame" x="45" y="133" width="122" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rock8.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKv-Jv-GyH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rock8" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKv-Jv-GyH">
                                 <rect key="frame" x="372" y="133" width="110" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -186,7 +258,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-G8-jeL">
                                 <rect key="frame" x="291" y="139" width="84" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="level_2.png"/>
+                                <state key="normal" title="Button" image="level_2"/>
                                 <connections>
                                     <segue destination="kxp-05-7HU" kind="presentation" id="bM2-xn-e7c"/>
                                 </connections>
@@ -194,7 +266,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPn-av-1xt">
                                 <rect key="frame" x="410" y="139" width="134" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="level_3.png"/>
+                                <state key="normal" title="Button" image="level_3"/>
                                 <connections>
                                     <segue destination="jU1-SX-5Lb" kind="presentation" id="Trc-3w-L3r"/>
                                 </connections>
@@ -202,7 +274,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STR-ff-TwF">
                                 <rect key="frame" x="184" y="146" width="77" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="level_1.png">
+                                <state key="normal" image="level_1">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default" weight="heavy">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -229,22 +301,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvE-QE-4cE">
-                                <rect key="frame" x="170" y="172" width="107" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="replay_button.png"/>
-                                <connections>
-                                    <segue destination="jU1-SX-5Lb" kind="presentation" id="DCM-OZ-cvh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shs-Hz-pnV">
-                                <rect key="frame" x="357" y="172" width="117" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="home_button.png"/>
-                                <connections>
-                                    <segue destination="5PQ-9F-zhd" kind="presentation" id="ycK-BW-mHn"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8H4-dp-46F">
                                 <rect key="frame" x="41" y="20" width="120" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -258,14 +314,50 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tga-7f-Thn">
+                                <rect key="frame" x="253" y="210" width="161" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Home">
+                                            <attributes>
+                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" size="24" name="Krungthep"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="5PQ-9F-zhd" kind="presentation" id="wD3-I0-7bR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="say-9P-jiu">
+                                <rect key="frame" x="253" y="172" width="161" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Replay">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Krungthep"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="jU1-SX-5Lb" kind="presentation" id="LxS-oz-fEh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="rk3-gz-BAz"/>
                     </view>
                     <connections>
-                        <outlet property="homeButton3" destination="shs-Hz-pnV" id="QF0-io-mVq"/>
-                        <outlet property="replayButton3" destination="uvE-QE-4cE" id="36N-gc-JZ5"/>
-                        <outlet property="scoreLabel4" destination="8H4-dp-46F" id="gYG-b9-cvI"/>
+                        <outlet property="home" destination="tga-7f-Thn" id="V4A-ij-zQ2"/>
+                        <outlet property="replay" destination="say-9P-jiu" id="Gb1-en-gOG"/>
+                        <outlet property="scoreLabel4" destination="8H4-dp-46F" id="jqe-cz-3OT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aW-IL-vT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -280,11 +372,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aim.png" translatesAutoresizingMaskIntoConstraints="NO" id="wh6-cM-biI" customClass="DragImageView" customModule="Coursework" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aim" translatesAutoresizingMaskIntoConstraints="NO" id="wh6-cM-biI" customClass="DragImageView" customModule="Coursework" customModuleProvider="target">
                                 <rect key="frame" x="58" y="137" width="119" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rock9.png" translatesAutoresizingMaskIntoConstraints="NO" id="OVO-JI-egv">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rock9" translatesAutoresizingMaskIntoConstraints="NO" id="OVO-JI-egv">
                                 <rect key="frame" x="314" y="155" width="129" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -303,8 +395,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="aim.png" width="256" height="256"/>
-        <image name="home_button.png" width="200" height="200"/>
+        <image name="aim" width="256" height="256"/>
         <image name="imageView:keh-m4-a64:image" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
@@ -4825,18 +4916,16 @@ BA8QAAQPEgAEDxQABA8WAAQPGAAEDx0ABA8lAAQgkQAEIJMABCCYAAQgpgAEIKoABCCxAAQgtgAEIMMA
 BCDGAAQg0wAEINgABCDgAAQg4wAEIOgABCDwAAAAAAAABAEAAAAAAAAAVwAAAAAAAAAAAAAAAAAEIPM
 </mutableData>
         </image>
-        <image name="level_1.png" width="76" height="133"/>
-        <image name="level_2.png" width="80" height="96"/>
-        <image name="level_3.png" width="80" height="96"/>
-        <image name="next_level.png" width="491.51998901367188" height="491.51998901367188"/>
-        <image name="replay_button.png" width="200" height="200"/>
-        <image name="rock8.png" width="280" height="280"/>
-        <image name="rock9.png" width="280" height="280"/>
+        <image name="level_1" width="76" height="133"/>
+        <image name="level_2" width="80" height="96"/>
+        <image name="level_3" width="80" height="96"/>
+        <image name="rock8" width="280" height="280"/>
+        <image name="rock9" width="280" height="280"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Trc-3w-L3r"/>
-        <segue reference="XKZ-Eg-faR"/>
-        <segue reference="yM5-xM-RTx"/>
-        <segue reference="EG0-aT-Kdg"/>
+        <segue reference="wD3-I0-7bR"/>
+        <segue reference="e1u-ST-TEe"/>
+        <segue reference="bM2-xn-e7c"/>
     </inferredMetricsTieBreakers>
 </document>

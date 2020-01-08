@@ -26,6 +26,10 @@ class L3ViewController: UIViewController, subview3Delegate{
     var balls = [UIImageView]()
     var birdViews = [UIImageView]()
     var friendlyViews = [UIImageView]()
+    var visibleBirds = [UIImageView]();
+    
+    let friendlyFrame = UIImageView(image: UIImage(named: "enemy.png"))
+    
 
     var squareBarrier:UIImageView!
        
@@ -33,7 +37,7 @@ class L3ViewController: UIViewController, subview3Delegate{
     var angleY:Int = 0
     var birdTimer:Timer?
     var gameTimer = Timer()
-    var gameInt = 30
+    var gameInt = 1
     var score = 0
        
     //Retrieve width & height of current phone screen
@@ -89,12 +93,18 @@ class L3ViewController: UIViewController, subview3Delegate{
        collisionBehavior.addBoundary(withIdentifier: "barrier" as NSCopying, for: UIBezierPath(rect: rockObstacle.frame))
        collisionBehavior.addBoundary(withIdentifier: "barrier" as NSCopying, for: UIBezierPath(rect: rock.frame))
   
+       friendlyFrame.frame = CGRect(x: W/1.2, y: H/2.5, width: 80, height: 80)
+       birdViews.append(friendlyFrame)
        /* BIRD COLLISIONS */
        collisionBehavior.action = {
            for ballView in self.balls {
-               for birds in self.birdViews {
-                for friendly in self.friendlyViews {
+               for birds in self.visibleBirds {
                    if ballView.frame.intersects(birds.frame) {
+                        
+                        // Remove intersected bird from visibleBirds array
+                        let index = self.visibleBirds.firstIndex(of: birds)
+                        self.visibleBirds.remove(at: index!)
+                    
                        let before = self.view.subviews.count
                        birds.removeFromSuperview()
                        let after = self.view.subviews.count
@@ -103,20 +113,10 @@ class L3ViewController: UIViewController, subview3Delegate{
                        if (before != after) {
                            self.score += 1
                        }
-                    
-                       else if ballView.frame.intersects(friendly.frame){
-                            let before = self.view.subviews.count
-                            friendly.removeFromSuperview()
-                            let after = self.view.subviews.count
-                            
-                            if before != after {
-                            self.score -= 2 }
-                            }
-                        }
-                    }
-               }
-           }
-       }
+                   }
+                }
+            }
+        }
     }
 
     // Initialise the crosshair image & starting position
@@ -130,10 +130,11 @@ class L3ViewController: UIViewController, subview3Delegate{
     }
 
     func addBirds() {
-       let friendlyFrame = UIImageView(image: UIImage(named: "enemy.png"))
-       friendlyFrame.frame = CGRect(x: W/1.2, y: H/2.5, width: 80, height: 80)
-       birdViews.append(friendlyFrame)
        
+       let friendlyFrame = UIImageView(image: UIImage(named: "enemy.png"))
+       friendlyFrame.frame = CGRect(x: W/1.2, y: H/1.4, width: 80, height: 80)
+       birdViews.append(friendlyFrame)
+        
        let friendlyFrame2 = UIImageView(image: UIImage(named: "enemy.png"))
        friendlyFrame2.frame = CGRect(x: W/1.2, y: H/1.4, width: 80, height: 80)
        birdViews.append(friendlyFrame2)
@@ -143,20 +144,6 @@ class L3ViewController: UIViewController, subview3Delegate{
        birdViews.append(friendlyFrame3)
     }
     
-    func addFriendly() {
-       let birdFrame = UIImageView(image: UIImage(named: "Jelly.png"))
-       birdFrame.frame = CGRect(x: W/1.2, y: H/2.5, width: 90, height: 90)
-       friendlyViews.append(birdFrame)
-       
-       let birdFrame2 = UIImageView(image: UIImage(named: "Jelly2.png"))
-       birdFrame2.frame = CGRect(x: W/1.2, y: H/1.4, width: 90, height: 90)
-       friendlyViews.append(birdFrame2)
-       
-       let birdFrame3 = UIImageView(image: UIImage(named: "Jelly3.png"))
-       birdFrame3.frame = CGRect(x: W/1.2, y: H/11, width: 90, height: 90)
-       friendlyViews.append(birdFrame3)
-    }
-
     @objc func game() {
        gameInt -= 1
        
@@ -186,10 +173,9 @@ class L3ViewController: UIViewController, subview3Delegate{
 
         shooter.oneMoreDelegate = self
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
-        addFriendly()
         addBirds()
         setupShooter()
-        
+
         rockObstacle.layer.cornerRadius = 20
         rockObstacle.layer.masksToBounds = true
         rockObstacle.frame = CGRect(x: W/2, y: H/2.1, width: 100, height: 100)
@@ -206,20 +192,13 @@ class L3ViewController: UIViewController, subview3Delegate{
         self.view.sendSubviewToBack(bg2View)
 
         //Random bird appearance
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {_ in
-            
-            let randNum = Int.random(in: 0 ... 2)
+        Timer.scheduledTimer(withTimeInterval: 1.4, repeats: true) {_ in
             let index = Int.random(in: 0 ... 2)
-            
-            if randNum == 0 || randNum == 1 {
+            if !self.visibleBirds.contains(self.birdViews[index]) {
+                self.visibleBirds.append(self.birdViews[index])
                 self.view.addSubview(self.birdViews[index])
-                Timer.scheduledTimer(withTimeInterval: 3, repeats: false) {_ in
-                    self.birdViews[index].removeFromSuperview() }
-            } else {
-                self.view.addSubview(self.friendlyViews[index])
-                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {_ in
-                    self.friendlyViews[index].removeFromSuperview() }
-                }
+                
             }
         }
     }
+}

@@ -13,21 +13,25 @@ class EndViewController: UIViewController {
     let W = UIScreen.main.bounds.width
     let H = UIScreen.main.bounds.height
     
-    @IBOutlet var replayButton: UIButton!
-    @IBOutlet var homeButton: UIButton!
+    @IBOutlet var nextLevel: UIButton!
+    @IBOutlet var home: UIButton!
+    @IBOutlet var replay: UIButton!
     
     @IBOutlet var scoreLabel: UILabel!
+    
     var scoreData:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // backgroundSetup()
-        setupReplayButton()
-        setupHomeButton()
         gameOverImg()
         
-        scoreLabel.frame = CGRect(x:W/2.58, y:H/1.8, width: 150, height: 50)
+        nextLevelButton()
+        replayLevelButton()
+        homeButton()
+        
+        scoreLabel.frame = CGRect(x:W/2.55, y:H/2.5, width: 200, height: 50)
         scoreLabel.text = "Final score: " + scoreData
         
     }
@@ -40,16 +44,18 @@ class EndViewController: UIViewController {
 //        self.view.addSubview(bgView)
 //    }
     
-    // Initialise replay button
-    func setupReplayButton() {
-        self.view.bringSubviewToFront(replayButton)
-        replayButton.frame = CGRect(x:W/2.58, y:H/1.35, width: 50, height: 50)
+    func nextLevelButton() {
+        nextLevel.frame = CGRect(x:W/2.6, y:H/1.8, width: 150, height: 50)
     }
     
-    func setupHomeButton() {
-        self.view.bringSubviewToFront(homeButton)
-        homeButton.frame = CGRect(x:W/1.92, y:H/1.35, width: 51, height: 51)
+    func replayLevelButton() {
+        replay.frame = CGRect(x:W/2.63, y:H/1.5, width: 150, height: 50)
     }
+    
+    func homeButton() {
+        home.frame = CGRect(x:W/2.63, y:H/1.3, width: 150, height: 50)
+    }
+    
     
     // Game over image
     func gameOverImg() {

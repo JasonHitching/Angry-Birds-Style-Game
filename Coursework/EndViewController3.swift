@@ -30,7 +30,7 @@ class EndViewController3: UIViewController {
         replayLevelButton()
         homeButton()
         
-        scoreLabel4.frame = CGRect(x:W/2.58, y:H/2.3, width: 150, height: 50)
+        scoreLabel4.frame = CGRect(x:W/2.58, y:H/2.3, width: 200, height: 50)
         scoreLabel4.text = "Final score: " + scoreData
         
     }

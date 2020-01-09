@@ -12,6 +12,7 @@
 		263378BB23C0D03400D15255 /* EndViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263378BA23C0D03400D15255 /* EndViewController2.swift */; };
 		265EE77123C3AF4B00BE2895 /* EndViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EE77023C3AF4B00BE2895 /* EndViewController3.swift */; };
 		265EE77323C3B5A000BE2895 /* L3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EE77223C3B5A000BE2895 /* L3ViewController.swift */; };
+		267E2E1823C757E200737CBE /* EXPLOSION Bang 04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 267E2E1723C757E200737CBE /* EXPLOSION Bang 04.wav */; };
 		26E335582397D549008CDCD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E335572397D549008CDCD6 /* AppDelegate.swift */; };
 		26E3355A2397D549008CDCD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E335592397D549008CDCD6 /* SceneDelegate.swift */; };
 		26E3355C2397D549008CDCD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E3355B2397D549008CDCD6 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 		263378BA23C0D03400D15255 /* EndViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController2.swift; sourceTree = "<group>"; };
 		265EE77023C3AF4B00BE2895 /* EndViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController3.swift; sourceTree = "<group>"; };
 		265EE77223C3B5A000BE2895 /* L3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L3ViewController.swift; sourceTree = "<group>"; };
+		267E2E1723C757E200737CBE /* EXPLOSION Bang 04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "EXPLOSION Bang 04.wav"; sourceTree = "<group>"; };
 		26E335542397D549008CDCD6 /* Coursework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coursework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E335572397D549008CDCD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26E335592397D549008CDCD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				26E335602397D54A008CDCD6 /* Assets.xcassets */,
 				26E335572397D549008CDCD6 /* AppDelegate.swift */,
 				26E335592397D549008CDCD6 /* SceneDelegate.swift */,
+				267E2E1723C757E200737CBE /* EXPLOSION Bang 04.wav */,
 			);
 			path = Coursework;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			files = (
 				26E335642397D54A008CDCD6 /* LaunchScreen.storyboard in Resources */,
 				26E335612397D54A008CDCD6 /* Assets.xcassets in Resources */,
+				267E2E1823C757E200737CBE /* EXPLOSION Bang 04.wav in Resources */,
 				26E3355F2397D549008CDCD6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -29,7 +29,7 @@ class EndViewController2: UIViewController {
         homeButton()
         gameOverImg()
         
-        scoreLabel.frame = CGRect(x:W/2.58, y:H/2.3, width: 150, height: 50)
+        scoreLabel.frame = CGRect(x:W/2.58, y:H/2.3, width: 200, height: 50)
         scoreLabel.text = "Final score: " + scoreData
     }
     

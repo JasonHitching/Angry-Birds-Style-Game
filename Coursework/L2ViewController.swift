@@ -31,7 +31,7 @@ class L2ViewController: UIViewController, subview2Delegate{
     var angleY:Int = 0
     var birdTimer:Timer?
     var gameTimer = Timer()
-    var gameInt = 2
+    var gameInt = 15
     var score = 0
     
     //Retrieve width & height of current phone screen
@@ -144,7 +144,7 @@ class L2ViewController: UIViewController, subview2Delegate{
     }
     
     @objc func end() {
-        
+        balls.removeAll()
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame2")
                 as! EndViewController2
         vc.scoreData = String(self.score)

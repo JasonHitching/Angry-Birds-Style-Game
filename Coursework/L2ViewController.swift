@@ -33,7 +33,7 @@ class L2ViewController: UIViewController, subview2Delegate{
     var angleY:Int = 0
     var birdTimer:Timer?
     var gameTimer = Timer()
-    var gameInt = 1
+    var gameInt = 20
     var score = 0
     
     //Retrieve width & height of current phone screen
@@ -91,13 +91,13 @@ class L2ViewController: UIViewController, subview2Delegate{
                 for bird in self.visibleBirds {
                     if ballView.frame.intersects(bird.frame) && bird.alpha != 0.0 {
                         
+                        self.splat()
+                        
                         // Remove intersected bird from visibleBirds array
                         let index = self.visibleBirds.firstIndex(of: bird)
                         self.visibleBirds.remove(at: index!)
                         
-                        let before = self.view.subviews.count
                         bird.removeFromSuperview()
-                        let after = self.view.subviews.count
                         
                         //If a bird was removed from superview
                         self.score += 1

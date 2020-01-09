@@ -53,10 +53,12 @@ class EndViewController: UIViewController {
     }
     
     func homeButton() {
-        home.frame = CGRect(x:W/2.63, y:H/2.45, width: 150, height: 90)
+        home.frame = CGRect(x:W/2.63, y:H/1.8, width: 150, height: 90)
     }
     
     func replayButton() {
-        replay.frame = CGRect(x:W/2.63, y:H/1.8, width: 150, height: 90)
+        replay.frame = CGRect(x:W/2.63, y:H/2.45, width: 150, height: 90)
     }
+    
+
 }

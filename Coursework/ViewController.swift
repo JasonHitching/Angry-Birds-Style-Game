@@ -17,7 +17,6 @@ protocol subviewDelegate {
 
 class ViewController: UIViewController, subviewDelegate{
     
-    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet var shooter: DragImageView!
     
     
@@ -38,7 +37,7 @@ class ViewController: UIViewController, subviewDelegate{
     
     var angleX:Int = 0
     var angleY:Int = 0
-    var gameInt = 3
+    var gameInt = 20
     var score = 0
     
     //Retrieve width & height of current phone screen
@@ -89,13 +88,12 @@ class ViewController: UIViewController, subviewDelegate{
             CGPoint(x: 0, y: H), to: CGPoint(x: W, y: H))
         
         dynamicAnimator.addBehavior(collisionBehavior)
-        
         /* Ball & bird collision implementation */
         collisionBehavior.action = {
             for ballView in self.balls {
                 for bird in self.visibleBirds {
                     if ballView.frame.intersects(bird.frame) && bird.alpha != 0.0 {
-                        
+
                         //Call audio function
                         self.splat()
                         
@@ -106,7 +104,6 @@ class ViewController: UIViewController, subviewDelegate{
                         bird.removeFromSuperview()
                         
                         self.score += 1
-                        self.scoreLabel.text = "Score: " + String(self.score)
                     }
                 }
             }

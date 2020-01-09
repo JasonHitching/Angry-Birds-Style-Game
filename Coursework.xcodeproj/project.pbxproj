@@ -16,6 +16,7 @@
 		267E2E2023C76E4800737CBE /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 267E2E1F23C76E4800737CBE /* 5.png */; };
 		267E2E2423C76FBF00737CBE /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 267E2E2323C76FBF00737CBE /* 12.png */; };
 		267E2E2A23C7ADD600737CBE /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = 267E2E2923C7ADD600737CBE /* game.png */; };
+		267E2E2C23C7CFFB00737CBE /* bloodSplat.png in Resources */ = {isa = PBXBuildFile; fileRef = 267E2E2B23C7CFFB00737CBE /* bloodSplat.png */; };
 		26E335582397D549008CDCD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E335572397D549008CDCD6 /* AppDelegate.swift */; };
 		26E3355A2397D549008CDCD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E335592397D549008CDCD6 /* SceneDelegate.swift */; };
 		26E3355C2397D549008CDCD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E3355B2397D549008CDCD6 /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		267E2E1F23C76E4800737CBE /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		267E2E2323C76FBF00737CBE /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
 		267E2E2923C7ADD600737CBE /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = ../../../game.png; sourceTree = "<group>"; };
+		267E2E2B23C7CFFB00737CBE /* bloodSplat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bloodSplat.png; sourceTree = "<group>"; };
 		26E335542397D549008CDCD6 /* Coursework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coursework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E335572397D549008CDCD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26E335592397D549008CDCD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		26E335562397D549008CDCD6 /* Coursework */ = {
 			isa = PBXGroup;
 			children = (
+				267E2E2B23C7CFFB00737CBE /* bloodSplat.png */,
 				267E2E2923C7ADD600737CBE /* game.png */,
 				267E2E2323C76FBF00737CBE /* 12.png */,
 				267E2E1F23C76E4800737CBE /* 5.png */,
@@ -270,6 +273,7 @@
 				267E2E2023C76E4800737CBE /* 5.png in Resources */,
 				267E2E2423C76FBF00737CBE /* 12.png in Resources */,
 				267E2E1823C757E200737CBE /* EXPLOSION Bang 04.wav in Resources */,
+				267E2E2C23C7CFFB00737CBE /* bloodSplat.png in Resources */,
 				26E3355F2397D549008CDCD6 /* Main.storyboard in Resources */,
 				267E2E2A23C7ADD600737CBE /* game.png in Resources */,
 			);

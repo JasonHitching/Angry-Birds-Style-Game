@@ -27,11 +27,10 @@ class L3ViewController: UIViewController, subview3Delegate{
     var balls = [UIImageView]()
     var birdViews = [UIImageView]()
     var visibleBirds = [UIImageView]();
-    var rockViews = [UIImageView]()
            
     var angleX:Int = 0
     var angleY:Int = 0
-    var gameInt = 1
+    var gameInt = 20
     var score = 0
     
     var birdTimer:Timer?
@@ -41,7 +40,7 @@ class L3ViewController: UIViewController, subview3Delegate{
     let W = UIScreen.main.bounds.width
     let H = UIScreen.main.bounds.height
     
-    let rockObstacle2 = UIImageView(image: UIImage(named: "rock1"))
+    let rockObstacle2 = UIImageView(image: UIImage(named: "rock8"))
     let rockObstacle = UIImageView(image: UIImage(named: "rock8"))
     
 
@@ -162,7 +161,7 @@ class L3ViewController: UIViewController, subview3Delegate{
         
         rockObstacle.layer.cornerRadius = 20
         rockObstacle.layer.masksToBounds = true
-        rockObstacle.frame = CGRect(x: W/2, y: H/1.2, width: 100, height: 100)
+        rockObstacle.frame = CGRect(x: W/2, y: H/1.3, width: 150, height: 200)
         self.view.addSubview(rockObstacle)
         
         rockObstacle2.frame = CGRect(x: W/2.5, y: H/30, width: 80, height: 80)

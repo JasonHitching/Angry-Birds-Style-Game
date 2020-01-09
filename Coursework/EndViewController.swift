@@ -24,44 +24,39 @@ class EndViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // backgroundSetup()
-        gameOverImg()
+        backgroundSetup()
         
         nextLevelButton()
-        replayLevelButton()
+        replayButton()
         homeButton()
         
-        scoreLabel.frame = CGRect(x:W/2.55, y:H/2.5, width: 200, height: 50)
-        scoreLabel.text = "Final score: " + scoreData
+        let labelImg = UIImageView(image: UIImage(named: "12.png"));
+        labelImg.frame = CGRect(x:W/13, y:H/12, width: 200, height: 90)
+        self.view.addSubview(labelImg)
         
+        scoreLabel.frame = CGRect(x:W/7.5, y:H/7.5, width: 200, height: 50)
+        scoreLabel.text = "Final score: " + scoreData
+        self.view.bringSubviewToFront(scoreLabel)
     }
     
-//    // Setup background image
-//    func backgroundSetup() {
-//        let bgView = UIImageView(image: nil)
-//        bgView.image = UIImage(named: "bg2.png")
-//        bgView.frame = UIScreen.main.bounds
-//        self.view.addSubview(bgView)
-//    }
+    // Setup background image
+    func backgroundSetup() {
+        let bgView = UIImageView(image: nil)
+        bgView.image = UIImage(named: "BG1")
+        bgView.frame = UIScreen.main.bounds
+        self.view.addSubview(bgView)
+        self.view.sendSubviewToBack(bgView)
+    }
     
     func nextLevelButton() {
-        nextLevel.frame = CGRect(x:W/2.6, y:H/1.8, width: 150, height: 50)
-    }
-    
-    func replayLevelButton() {
-        replay.frame = CGRect(x:W/2.63, y:H/1.5, width: 150, height: 50)
+        nextLevel.frame = CGRect(x:W/2.63, y:H/3.8, width: 150, height: 90)
     }
     
     func homeButton() {
-        home.frame = CGRect(x:W/2.63, y:H/1.3, width: 150, height: 50)
+        home.frame = CGRect(x:W/2.63, y:H/2.45, width: 150, height: 90)
     }
     
-    
-    // Game over image
-    func gameOverImg() {
-        let gameOver = UIImageView(image: UIImage(named: "gameOver.png"))
-        gameOver.frame = CGRect(x:W/2.58, y:H/100, width: 150, height: 180)
-        self.view.addSubview(gameOver)
-        self.view.bringSubviewToFront(gameOver)
+    func replayButton() {
+        replay.frame = CGRect(x:W/2.63, y:H/1.8, width: 150, height: 90)
     }
 }

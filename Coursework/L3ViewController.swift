@@ -31,7 +31,7 @@ class L3ViewController: UIViewController, subview3Delegate{
            
     var angleX:Int = 0
     var angleY:Int = 0
-    var gameInt = 15
+    var gameInt = 1
     var score = 0
     
     var birdTimer:Timer?
@@ -40,6 +40,7 @@ class L3ViewController: UIViewController, subview3Delegate{
     //Retrieve width & height of current phone screen
     let W = UIScreen.main.bounds.width
     let H = UIScreen.main.bounds.height
+    
     let rockObstacle2 = UIImageView(image: UIImage(named: "rock1"))
     let rockObstacle = UIImageView(image: UIImage(named: "rock8"))
     
@@ -76,6 +77,7 @@ class L3ViewController: UIViewController, subview3Delegate{
     
     /* Initialise phone screen collision boundaries */
     func setupCollisions() {
+        
         // Declare items to inherit collison behavior
         collisionBehavior = UICollisionBehavior(items: balls)
 
@@ -93,7 +95,6 @@ class L3ViewController: UIViewController, subview3Delegate{
         collisionBehavior.addBoundary(withIdentifier: "barrier" as NSCopying, for: UIBezierPath(rect: rockObstacle.frame))
         collisionBehavior.addBoundary(withIdentifier: "barrier" as NSCopying, for: UIBezierPath(rect: rockObstacle2.frame))
 
-  
        /* BIRD COLLISIONS */
        collisionBehavior.action = {
            for ballView in self.balls {
@@ -115,6 +116,7 @@ class L3ViewController: UIViewController, subview3Delegate{
             }
         }
     }
+    
     
     func splat() {
         let path = Bundle.main.path(forResource:"EXPLOSION Bang 04.wav", ofType:nil)!
@@ -144,12 +146,13 @@ class L3ViewController: UIViewController, subview3Delegate{
         shooter.image = UIImage(named: "aim.png")
         shooter.frame = CGRect(x: W/27, y: H/2.5, width: 80, height: 80)
         shooter.isUserInteractionEnabled = true
+        
         // Set the crosshair image to visible
         self.view.addSubview(shooter)
         
         // Background img
         let bg2View = UIImageView(image: nil)
-        bg2View.image = UIImage(named: "bg.jpg")
+        bg2View.image = UIImage(named: "BG3")
         bg2View.frame = UIScreen.main.bounds
         self.view.addSubview(bg2View)
         self.view.sendSubviewToBack(bg2View)
@@ -199,7 +202,7 @@ class L3ViewController: UIViewController, subview3Delegate{
         startGameTimer()
         addGfx()
         addRocks()
-
+        
         //Random bird appearance
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
             let index = Int.random(in: 0 ... 2)

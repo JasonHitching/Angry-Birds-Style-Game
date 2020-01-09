@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 /* Delegation protocol */
 protocol subviewDelegate {
@@ -24,6 +25,7 @@ class ViewController: UIViewController, subviewDelegate{
     var dynamicAnimator: UIDynamicAnimator!
     var collisionBehavior: UICollisionBehavior!
     var dynamicItemBehavior: UIDynamicItemBehavior!
+    var birdSplat: AVAudioPlayer?
     
     /* Array variables */
     var balls = [UIImageView]();
@@ -36,7 +38,7 @@ class ViewController: UIViewController, subviewDelegate{
     
     var angleX:Int = 0
     var angleY:Int = 0
-    var gameInt = 15
+    var gameInt = 3
     var score = 0
     
     //Retrieve width & height of current phone screen
@@ -91,25 +93,35 @@ class ViewController: UIViewController, subviewDelegate{
         /* Ball & bird collision implementation */
         collisionBehavior.action = {
             for ballView in self.balls {
-                for birds in self.visibleBirds {
-                    if ballView.frame.intersects(birds.frame) {
+                for bird in self.visibleBirds {
+                    if ballView.frame.intersects(bird.frame) && bird.alpha != 0.0 {
+                        
+                        //Call audio function
+                        self.splat()
                         
                         // Remove intersected bird from visibleBirds array
-                        let index = self.visibleBirds.firstIndex(of: birds)
+                        let index = self.visibleBirds.firstIndex(of: bird)
                         self.visibleBirds.remove(at: index!)
                         
-                        // Check count of subviews before and after removal of birds
-                        let before = self.view.subviews.count
-                        birds.removeFromSuperview()
-                        let after = self.view.subviews.count
-                                        
-                        //If a bird was removed from superview score += 1
-                        if (before != after) {
-                            self.score += 1
-                            self.scoreLabel.text = "Score: " + String(self.score) }
+                        bird.removeFromSuperview()
+                        
+                        self.score += 1
+                        self.scoreLabel.text = "Score: " + String(self.score)
                     }
                 }
             }
+        }
+    }
+    
+    func splat() {
+        let path = Bundle.main.path(forResource:"EXPLOSION Bang 04.wav", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            birdSplat = try AVAudioPlayer(contentsOf: url)
+            birdSplat?.play()
+        } catch {
+            // BROKED
         }
     }
     
@@ -124,7 +136,7 @@ class ViewController: UIViewController, subviewDelegate{
     }
     
     /* ADD BIRD SPRITES TO THE BIRD ARRAY */
-    func addBirds() {
+    func addGfx() {
         let birdFrame = UIImageView(image: UIImage(named: "enemy.png"))
         birdFrame.frame = CGRect(x: W/1.2, y: H/2.5, width: 80, height: 80)
         birdViews.append(birdFrame)
@@ -136,6 +148,13 @@ class ViewController: UIViewController, subviewDelegate{
         let birdFrame3 = UIImageView(image: UIImage(named: "enemy.png"))
         birdFrame3.frame = CGRect(x: W/1.2, y: H/11, width: 80, height: 80)
         birdViews.append(birdFrame3)
+        
+        // Background img
+        let bg2View = UIImageView(image: nil)
+        bg2View.image = UIImage(named: "BG4")
+        bg2View.frame = UIScreen.main.bounds
+        self.view.addSubview(bg2View)
+        self.view.sendSubviewToBack(bg2View)
     }
     
     /* FUNCTION DEALING WITH THE RUNNING OF THE GAME */
@@ -175,15 +194,10 @@ class ViewController: UIViewController, subviewDelegate{
         shooter.myDelegate = self
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
 
-        addBirds()
+        addGfx()
         setupShooter()
 
-        // Background img
-        let bg2View = UIImageView(image: nil)
-        bg2View.image = UIImage(named: "bg.jpg")
-        bg2View.frame = UIScreen.main.bounds
-        self.view.addSubview(bg2View)
-        self.view.sendSubviewToBack(bg2View)
+        
                 
         //Random bird appearance
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in

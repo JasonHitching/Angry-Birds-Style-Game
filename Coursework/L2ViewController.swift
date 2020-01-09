@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol subview2Delegate {
     func fireBall()
@@ -22,6 +23,7 @@ class L2ViewController: UIViewController, subview2Delegate{
     var dynamicAnimator: UIDynamicAnimator!
     var collisionBehavior: UICollisionBehavior!
     var dynamicItemBehavior: UIDynamicItemBehavior!
+    var birdSplat: AVAudioPlayer?
     
     var balls = [UIImageView]();
     var birdViews = [UIImageView]();
@@ -31,7 +33,7 @@ class L2ViewController: UIViewController, subview2Delegate{
     var angleY:Int = 0
     var birdTimer:Timer?
     var gameTimer = Timer()
-    var gameInt = 15
+    var gameInt = 1
     var score = 0
     
     //Retrieve width & height of current phone screen
@@ -47,7 +49,6 @@ class L2ViewController: UIViewController, subview2Delegate{
         ballFrame.frame = CGRect(x: W/40, y: H/2.7, width: 60, height: 60)
         ballFrame.layer.cornerRadius = 30
         ballFrame.layer.masksToBounds = true
-        
         
         /* Add the ball to the subview and append it to the 'balls' array */
         self.view.addSubview(ballFrame)
@@ -87,25 +88,35 @@ class L2ViewController: UIViewController, subview2Delegate{
         /* BIRD COLLISIONS */
         collisionBehavior.action = {
             for ballView in self.balls {
-                for birds in self.visibleBirds {
-                    if ballView.frame.intersects(birds.frame) {
+                for bird in self.visibleBirds {
+                    if ballView.frame.intersects(bird.frame) && bird.alpha != 0.0 {
                         
                         // Remove intersected bird from visibleBirds array
-                        let index = self.visibleBirds.firstIndex(of: birds)
+                        let index = self.visibleBirds.firstIndex(of: bird)
                         self.visibleBirds.remove(at: index!)
                         
                         let before = self.view.subviews.count
-                        birds.removeFromSuperview()
+                        bird.removeFromSuperview()
                         let after = self.view.subviews.count
                         
                         //If a bird was removed from superview
-                        if (before != after) {
-                            self.score += 1
-                            //self.scoreLabel.text = "Score: " + String(self.score)
-                        }
+                        self.score += 1
+//                        self.scoreLabel.text = "Score: " + String(self.score)
                     }
                 }
             }
+        }
+    }
+    
+    func splat() {
+        let path = Bundle.main.path(forResource:"EXPLOSION Bang 04.wav", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            birdSplat = try AVAudioPlayer(contentsOf: url)
+            birdSplat?.play()
+        } catch {
+            // BROKED
         }
     }
     
@@ -119,7 +130,7 @@ class L2ViewController: UIViewController, subview2Delegate{
         self.view.addSubview(shooter)
     }
     
-    func addBirds() {
+    func addGfx() {
         let birdFrame = UIImageView(image: UIImage(named: "enemy.png"))
         birdFrame.frame = CGRect(x: W/1.2, y: H/2.5, width: 80, height: 80)
         birdViews.append(birdFrame)
@@ -131,6 +142,19 @@ class L2ViewController: UIViewController, subview2Delegate{
         let birdFrame3 = UIImageView(image: UIImage(named: "enemy.png"))
         birdFrame3.frame = CGRect(x: W/1.2, y: H/11, width: 80, height: 80)
         birdViews.append(birdFrame3)
+        
+        // Background img
+        let bg2View = UIImageView(image: nil)
+        bg2View.image = UIImage(named: "BG2")
+        bg2View.frame = UIScreen.main.bounds
+        self.view.addSubview(bg2View)
+        self.view.sendSubviewToBack(bg2View)
+        
+        squareBarrier.layer.cornerRadius = 20
+        squareBarrier.layer.masksToBounds = true
+        squareBarrier.frame = CGRect(x: W/2, y: H/3, width: 100, height: 100)
+        squareBarrier.layer.borderColor = UIColor.lightGray.cgColor
+        squareBarrier.layer.borderWidth = 1.0
     }
     
     @objc func game() {
@@ -156,6 +180,8 @@ class L2ViewController: UIViewController, subview2Delegate{
         gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.game), userInfo: nil, repeats: true)
     }
     
+    
+    
 
     
     override func viewDidLoad() {
@@ -166,25 +192,9 @@ class L2ViewController: UIViewController, subview2Delegate{
         shooter.anotherDelegate = self
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
 
-        addBirds()
+        addGfx()
         setupShooter()
-
-        // Background img
-        let bg2View = UIImageView(image: nil)
-        bg2View.image = UIImage(named: "bg.jpg")
-        bg2View.frame = UIScreen.main.bounds
-        self.view.addSubview(bg2View)
-        self.view.sendSubviewToBack(bg2View)
-        
-        squareBarrier.layer.cornerRadius = 20
-        squareBarrier.layer.masksToBounds = true
-        squareBarrier.frame = CGRect(x: W/2, y: H/3, width: 100, height: 100)
-        squareBarrier.layer.borderColor = UIColor.lightGray.cgColor
-        squareBarrier.layer.borderWidth = 1.0
-        
-        
-        
-                
+     
         //Random bird appearance
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
             let index = Int.random(in: 0 ... 2)

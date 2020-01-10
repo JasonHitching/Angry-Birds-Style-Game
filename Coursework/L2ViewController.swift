@@ -23,8 +23,10 @@ class L2ViewController: UIViewController, subview2Delegate{
     var dynamicAnimator: UIDynamicAnimator!
     var collisionBehavior: UICollisionBehavior!
     var dynamicItemBehavior: UIDynamicItemBehavior!
-    var birdSplat: AVAudioPlayer?
     
+    var birdSplat: AVAudioPlayer?
+    var shooterWoosh: AVAudioPlayer?
+
     var balls = [UIImageView]();
     var birdViews = [UIImageView]();
     var visibleBirds = [UIImageView]();
@@ -33,7 +35,7 @@ class L2ViewController: UIViewController, subview2Delegate{
     var angleY:Int = 0
     var birdTimer:Timer?
     var gameTimer = Timer()
-    var gameInt = 20
+    var gameInt = 6
     var score = 0
     
     //Retrieve width & height of current phone screen
@@ -43,9 +45,11 @@ class L2ViewController: UIViewController, subview2Delegate{
     /* Function to fire the ball from the shooter */
     func fireBall() {
         
+        swipe()
+        
         /* Create a new ball */
         let ballFrame = UIImageView(image: nil)
-        ballFrame.image = UIImage(named: "ball.png")
+        ballFrame.image = UIImage(named: "rock9")
         ballFrame.frame = CGRect(x: W/40, y: H/2.7, width: 60, height: 60)
         ballFrame.layer.cornerRadius = 30
         ballFrame.layer.masksToBounds = true
@@ -109,7 +113,7 @@ class L2ViewController: UIViewController, subview2Delegate{
     }
     
     func splat() {
-        let path = Bundle.main.path(forResource:"EXPLOSION Bang 04.wav", ofType:nil)!
+        let path = Bundle.main.path(forResource:"SPLAT Crush 01.wav", ofType:nil)!
         let url = URL(fileURLWithPath: path)
 
         do {
@@ -120,9 +124,21 @@ class L2ViewController: UIViewController, subview2Delegate{
         }
     }
     
+    func swipe() {
+        let path = Bundle.main.path(forResource:"SWIPE Whoosh Double 01.wav", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            shooterWoosh = try AVAudioPlayer(contentsOf: url)
+            shooterWoosh?.play()
+        } catch {
+            // BROKED
+        }
+    }
+    
     // Initialise the crosshair image & starting position
     func setupShooter() {
-        shooter.image = UIImage(named: "aim.png")
+        shooter.image = UIImage(named: "shooter")
         shooter.frame = CGRect(x: W/27, y: H/2.5, width: 80, height: 80)
         shooter.isUserInteractionEnabled = true
 

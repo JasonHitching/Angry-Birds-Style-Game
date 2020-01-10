@@ -33,7 +33,7 @@ class EndViewController2: UIViewController {
         labelImg.frame = CGRect(x:W/13, y:H/12, width: 200, height: 90)
         self.view.addSubview(labelImg)
         
-        scoreLabel.frame = CGRect(x:W/7.5, y:H/7.5, width: 200, height: 50)
+        scoreLabel.frame = CGRect(x:W/7.8, y:H/7.5, width: 200, height: 50)
         scoreLabel.text = "Final score: " + scoreData
         self.view.bringSubviewToFront(scoreLabel)
     }
@@ -49,15 +49,15 @@ class EndViewController2: UIViewController {
     
     
     func nextLevelButton() {
-        nextLevel.frame = CGRect(x:W/2.63, y:H/3.8, width: 150, height: 90)
+        nextLevel.frame = CGRect(x:W/2.58, y:H/3.8, width: 150, height: 90)
     }
     
     func replayLevelButton() {
-        replay.frame = CGRect(x:W/2.63, y:H/2.45, width: 150, height: 90)
+        replay.frame = CGRect(x:W/2.58, y:H/2.45, width: 150, height: 90)
     }
     
     func homeButton() {
-        home.frame = CGRect(x:W/2.63, y:H/1.8, width: 150, height: 90)
+        home.frame = CGRect(x:W/2.58, y:H/1.8, width: 150, height: 90)
     }
     
 }

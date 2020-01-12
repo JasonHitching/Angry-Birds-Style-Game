@@ -32,7 +32,7 @@ class L3ViewController: UIViewController, subview3Delegate{
            
     var angleX:Int = 0
     var angleY:Int = 0
-    var gameInt = 6
+    var gameInt = 12
     var score = 0
     
     var birdTimer:Timer?
@@ -201,7 +201,7 @@ class L3ViewController: UIViewController, subview3Delegate{
        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame3")
                as! EndViewController3
         vc.scoreData = String(self.score)
-        self.present(vc, animated: true, completion: nil)
+        self.present(vc, animated: false, completion: nil)
     }
 
     func startGameTimer() {

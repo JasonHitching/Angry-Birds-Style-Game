@@ -427,9 +427,9 @@
         <image name="shooter" width="600" height="599"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gRz-nz-TBu"/>
+        <segue reference="Trc-3w-L3r"/>
         <segue reference="zEe-8a-gJY"/>
-        <segue reference="dDI-m7-KnM"/>
-        <segue reference="gPC-hS-ih3"/>
+        <segue reference="e1u-ST-TEe"/>
+        <segue reference="bM2-xn-e7c"/>
     </inferredMetricsTieBreakers>
 </document>

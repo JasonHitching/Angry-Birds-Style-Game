@@ -40,7 +40,7 @@ class ViewController: UIViewController, subviewDelegate{
     
     var angleX:Int = 0
     var angleY:Int = 0
-    var gameInt = 6
+    var gameInt = 12
     var score = 0
     
     //Retrieve width & height of current phone screen
@@ -190,7 +190,7 @@ class ViewController: UIViewController, subviewDelegate{
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame")
                 as! EndViewController
         vc.scoreData = String(self.score)
-        self.present(vc, animated: true, completion: nil)
+        self.present(vc, animated: false, completion: nil)
         
     }
     

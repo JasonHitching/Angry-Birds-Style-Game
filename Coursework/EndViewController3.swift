@@ -32,10 +32,10 @@ class EndViewController3: UIViewController {
         backgroundSetup()
         
         let labelImg = UIImageView(image: UIImage(named: "12.png"));
-        labelImg.frame = CGRect(x:W/2.93, y:H/3.4, width: 200, height: 90)
+        labelImg.frame = CGRect(x:W/2.85, y:H/3.4, width: 200, height: 90)
         self.view.addSubview(labelImg)
         
-        scoreLabel4.frame = CGRect(x:W/2.55, y:H/2.9, width: 200, height: 50)
+        scoreLabel4.frame = CGRect(x:W/2.45, y:H/2.9, width: 200, height: 50)
         scoreLabel4.text = "Final score: " + scoreData
         self.view.bringSubviewToFront(scoreLabel4)
         
@@ -56,7 +56,7 @@ class EndViewController3: UIViewController {
     // Game over image
     func gameOverImg() {
         let gameOver = UIImageView(image: UIImage(named: "game"))
-        gameOver.frame = CGRect(x:W/3.7, y:H/13, width: 300, height: 80)
+        gameOver.frame = CGRect(x:W/3.4, y:H/13, width: 300, height: 80)
         self.view.addSubview(gameOver)
         self.view.bringSubviewToFront(gameOver)
     }

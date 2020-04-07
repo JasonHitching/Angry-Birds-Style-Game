@@ -1,10 +1,10 @@
-# 16063233
+# Swift - Angry Birds Styled Game
 
 Jason Hitching - University of Hertfordshire.
 
 
-Coursework Description:
-      The task of this assignment is to develop an iOS mobile app using Xcode platform and Swift
-      language. The game features a similar concept to the globally well-known title Angry Bird. The basic
-      principle is to shoot a ball to the bird target. Once the game ends, a completion view should be
-      displayed with the facility to restart the game.
+Description:
+
+To gain an understanding of mobile/iOS development I wrote this game as a little side project alongside my university            studies. It's built around the general concept of Angry Birds.
+
+All assets obtained were from free unlicensed sources and have been referenced where required.
